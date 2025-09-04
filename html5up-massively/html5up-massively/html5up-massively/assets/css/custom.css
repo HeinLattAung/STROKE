@@ -1,0 +1,122 @@
+/* === Custom Responsive Overrides === */
+:root{
+  --brand: #226E93;
+  --text: #1b1b1b;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --radius: 14px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Layout helpers */
+.container{
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.img-fluid{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rounded{
+  border-radius: var(--radius);
+}
+
+/* Header */
+.site-header{
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+.logo{
+  width: min(200px, 40vw);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Banner */
+.banner{
+  padding: 24px 0 8px;
+}
+.banner-grid{
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+.banner-copy{
+  display: grid;
+  gap: 12px;
+}
+.section-title{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: var(--brand);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Features */
+.features-grid{
+  display: grid;
+  gap: 28px;
+  padding: 8px 0 40px;
+  grid-template-columns: 1fr;
+}
+.feature-card{
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+.feature-title{
+  margin: 8px 0 0 0;
+  color: var(--brand);
+  font-size: 1.125rem;
+}
+.feature-text{
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Footer tweaks (keeps HTML5UP split layout but improves spacing) */
+.site-footer{
+  margin-top: 24px;
+}
+.site-footer .split.contact{
+  gap: 16px;
+}
+.site-footer h3{
+  margin-bottom: 6px;
+}
+
+/* Buttons: keep theme’s styles but ensure natural width on mobile */
+.button.primary{
+  width: fit-content;
+}
+
+/* === Responsive Breakpoints === */
+@media (min-width: 640px){
+  .feature-text{ font-size: 1rem; }
+}
+
+@media (min-width: 768px){
+  .banner-grid{
+    grid-template-columns: 1.1fr 1fr; /* image | text */
+    gap: 28px;
+  }
+  .features-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px){
+  .banner{ padding: 32px 0 12px; }
+  .features-grid{ gap: 28px; }
+}
